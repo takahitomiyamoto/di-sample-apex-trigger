@@ -15,6 +15,11 @@ sudo chmod +x ./orgInit.sh  # if needed.
 ./orgInit.sh
 ```
 
+Basically you don't have to change any metadata under
+  - ./di-sample-apex-trigger/main/common/classes/
+  - ./di-sample-apex-trigger/main/common/objects/Trigger_Observer__mdt/
+  - ./di-sample-apex-trigger/test/common/classes/
+
 ## Directory Structure
 ```bash
 .
@@ -97,6 +102,5 @@ sudo chmod +x ./orgInit.sh  # if needed.
 ```
 
 ## Acknowledgement
-- [afawcett/force-di](https://github.com/afawcett/force-di)
-- [Crafting Flexible APIs in Apex Using Custom Metadata](https://success.salesforce.com/sessions?eventId=a1Q3A00001XoCSUUA3#/session/a2q3A000001WXFFQA4)
-- [takahiro-yonei/ApexTriggerForMeetup18](https://github.com/takahiro-yonei/ApexTriggerForMeetup18)
+- Custom Metadata Type: [Build Reusable Lightning Components](https://trailhead.salesforce.com/content/learn/projects/build-reusable-lightning-components)
+- Apex Trigger Pattern: [takahiro-yonei/ApexTriggerForMeetup18](https://github.com/takahiro-yonei/ApexTriggerForMeetup18)
