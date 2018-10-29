@@ -167,10 +167,6 @@ public abstract class BaseTriggerHandler {
         DeveloperName ASC
       LIMIT 50000
     ]) {
-      // if (!triggerObserver.Active__c) {
-      //   continue;
-      // }
-
       this.addActiveTriggerOperations(triggerObserver);
     }
   }
