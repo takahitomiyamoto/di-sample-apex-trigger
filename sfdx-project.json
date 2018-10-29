@@ -1,0 +1,11 @@
+{
+  "packageDirectories": [
+    {
+      "path": "di-sample-apex-trigger",
+      "default": true
+    }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "44.0"
+}
