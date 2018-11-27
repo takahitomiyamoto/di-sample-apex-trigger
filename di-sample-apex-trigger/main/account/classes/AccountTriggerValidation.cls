@@ -43,7 +43,8 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
    * @return ITriggerObserver
    **************************************************/
   public static ITriggerObserver getInstance(BaseTriggerHandler handler) {
-    return (ITriggerObserver)new AccountTriggerValidation(handler);
+    AccountTriggerValidation validation = new AccountTriggerValidation(handler);
+    return (ITriggerObserver)validation;
   }
 
   /*******************************************************
@@ -141,7 +142,6 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
       logger.stackDebugLog(LOGGING_LEVEL_DEFAULT, CLASS_NAME, methodName, 'hasPhone: ' + hasPhone);
 
       if (hasFax && !hasPhone) {
-        // a.addError(ERROR_MESSAGE_PHONE_REQUIRED);
         a.Phone.addError(ERROR_MESSAGE_PHONE_REQUIRED);
         throw new CommonException(ERROR_MESSAGE_PHONE_REQUIRED);
       }

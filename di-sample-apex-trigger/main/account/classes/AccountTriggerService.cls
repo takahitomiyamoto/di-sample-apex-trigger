@@ -43,7 +43,8 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
    * @return ITriggerObserver
    **************************************************/
   public static ITriggerObserver getInstance(BaseTriggerHandler handler) {
-    return (ITriggerObserver)new AccountTriggerService(handler);
+    AccountTriggerService service = new AccountTriggerService(handler);
+    return (ITriggerObserver)service;
   }
 
   /*******************************************************
