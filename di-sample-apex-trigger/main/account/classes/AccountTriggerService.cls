@@ -8,7 +8,7 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
   private class CommonException extends Exception {}
 
   // Constants
-  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonConstants.LOGGING_LEVEL_DEFAULT;
+  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonLogger.LOGGING_LEVEL_DEFAULT;
   private static final String CLASS_NAME = AccountTriggerService.class.getName();
   private static final String NAME_PREFIX_SAMPLE = AccountConstants.NAME_PREFIX_SAMPLE;
 

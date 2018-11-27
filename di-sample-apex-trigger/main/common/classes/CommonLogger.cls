@@ -5,7 +5,7 @@
 public without sharing class CommonLogger {
 
   // Constants
-  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonConstants.LOGGING_LEVEL_DEFAULT;
+  public static final System.loggingLevel LOGGING_LEVEL_DEFAULT = getLoggingLevelDefault();
   private static final String CLASS_NAME = CommonLogger.class.getName();
   private static final String DATE_FORMAT = CommonConstants.DATE_FORMAT;
   private static final String MSG_NEW_INSTANCE_CREATED = CommonConstants.MSG_NEW_INSTANCE_CREATED;
@@ -138,6 +138,28 @@ public without sharing class CommonLogger {
         return System.LoggingLevel.DEBUG;
       }
     }
+  }
+
+  /*******************************************************
+   * Name: getLoggingLevelDefault
+   * Description: Get the default value of LoggingLevel
+   *
+   * @param  none
+   * @return System.LoggingLevel
+   *******************************************************/
+  private static System.loggingLevel getLoggingLevelDefault() {
+    String developerName = CommonConstants.LOGGER_DEFAULT;
+
+    Logger__mdt logger = [
+      SELECT
+        Logging_Level__c
+      FROM
+        Logger__mdt
+      WHERE
+        DeveloperName = :developerName
+    ];
+
+    return getLoggingLevel(logger.Logging_Level__c);
   }
 
 }

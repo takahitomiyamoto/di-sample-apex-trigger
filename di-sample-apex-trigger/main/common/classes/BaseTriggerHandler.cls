@@ -9,7 +9,7 @@ public abstract class BaseTriggerHandler {
 
   // Constants
   private static final String CLASS_NAME = BaseTriggerHandler.class.getName();
-  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonConstants.LOGGING_LEVEL_DEFAULT;
+  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonLogger.LOGGING_LEVEL_DEFAULT;
 
   // Logger Variable
   private final CommonLogger logger = CommonLogger.getInstance();

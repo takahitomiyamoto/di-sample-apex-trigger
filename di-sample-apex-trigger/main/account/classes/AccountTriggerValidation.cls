@@ -8,7 +8,7 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
   private class CommonException extends Exception {}
 
   // Constants
-  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonConstants.LOGGING_LEVEL_DEFAULT;
+  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonLogger.LOGGING_LEVEL_DEFAULT;
   private static final String CLASS_NAME = AccountTriggerValidation.class.getName();
   private static final String ERROR_MESSAGE_PHONE_REQUIRED = AccountConstants.ERROR_MESSAGE_PHONE_REQUIRED;
 

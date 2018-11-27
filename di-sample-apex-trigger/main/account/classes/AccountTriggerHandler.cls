@@ -8,7 +8,7 @@ public without sharing class AccountTriggerHandler extends BaseTriggerHandler {
   private class CommonException extends Exception {}
 
   // Constants
-  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonConstants.LOGGING_LEVEL_DEFAULT;
+  private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonLogger.LOGGING_LEVEL_DEFAULT;
   private static final String CLASS_NAME = AccountTriggerHandler.class.getName();
 
   // Logger Variable
