@@ -20,8 +20,8 @@ public without sharing class AccountTriggerHandler extends BaseTriggerHandler {
   // Instance Variables
   public List<Account> oldAccounts;
   public List<Account> newAccounts;
-  public Map<Id, Account> oldAccountMap;
-  public Map<Id, Account> newAccountMap;
+  public Map<ID, Account> oldAccountMap;
+  public Map<ID, Account> newAccountMap;
 
   /*********************************************
    * Name: AccountTriggerHandler

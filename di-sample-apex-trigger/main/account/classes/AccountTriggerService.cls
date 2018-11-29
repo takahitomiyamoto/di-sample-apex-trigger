@@ -124,13 +124,13 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
    * Name: addPrefixToName
    * Description: 取引先名(Name)項目の先頭に[サンプル]という文字列を付ける。
    *
-   * @param  List<Account> newAccounts
+   * @param  List<Account> accounts
    * @return void
    *****************************************************************/
-  private void addPrefixToName(List<Account> newAccounts) {
+  private void addPrefixToName(List<Account> accounts) {
     methodName = 'addPrefixToName';
 
-    for (Account a : newAccounts) {
+    for (Account a : accounts) {
       a.Name = NAME_PREFIX_SAMPLE + a.Name;
       logger.stackDebugLog(LOGGING_LEVEL_DEFAULT, CLASS_NAME, methodName, 'Name: ' + a.Name);
     }

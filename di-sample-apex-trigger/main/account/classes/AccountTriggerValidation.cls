@@ -128,13 +128,13 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
    * Description: Fax(FAX)項目に値が入っており、かつ電話(Phone)項目に値が入っていない場合は
    * 「FAXが入っている場合は電話番号も入力してください」というエラーにする。
    *
-   * @param  List<Account> newAccounts
+   * @param  List<Account> accounts
    * @return void
    ********************************************************************************/
-  private void validatePhone(List<Account> newAccounts) {
+  private void validatePhone(List<Account> accounts) {
     methodName = 'validatePhone';
 
-    for (Account a : newAccounts) {
+    for (Account a : accounts) {
       Boolean hasFax = String.isNotEmpty(a.Fax);
       Boolean hasPhone = String.isNotEmpty(a.Phone);
 

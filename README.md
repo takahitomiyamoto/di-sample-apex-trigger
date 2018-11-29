@@ -20,6 +20,8 @@ Basically you don't have to change any metadata under
   - ./di-sample-apex-trigger/main/common/objects/Trigger_Observer__mdt/
   - ./di-sample-apex-trigger/test/common/classes/
 
+![class_diagram](https://github.com/takahitomiyamoto/di-sample-apex-trigger/tree/master/out/class_diagram.png)
+
 ## Directory Structure
 ```bash
 .
