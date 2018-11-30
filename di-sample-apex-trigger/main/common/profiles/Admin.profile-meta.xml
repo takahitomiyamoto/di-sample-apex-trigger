@@ -9,10 +9,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AccountTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>AccountTriggerService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -21,7 +17,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>BaseTriggerHandler</apexClass>
+        <apexClass>CommonTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

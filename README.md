@@ -35,8 +35,6 @@ Basically you don't have to change any metadata under
 │   │   │   ├── classes
 │   │   │   │   ├── AccountConstants.cls
 │   │   │   │   ├── AccountConstants.cls-meta.xml
-│   │   │   │   ├── AccountTriggerHandler.cls
-│   │   │   │   ├── AccountTriggerHandler.cls-meta.xml
 │   │   │   │   ├── AccountTriggerService.cls
 │   │   │   │   ├── AccountTriggerService.cls-meta.xml
 │   │   │   │   ├── AccountTriggerValidation.cls
@@ -46,8 +44,8 @@ Basically you don't have to change any metadata under
 │   │   │       └── AccountTrigger.trigger-meta.xml
 │   │   ├── common
 │   │   │   ├── classes
-│   │   │   │   ├── BaseTriggerHandler.cls
-│   │   │   │   ├── BaseTriggerHandler.cls-meta.xml
+│   │   │   │   ├── CommonTriggerHandler.cls
+│   │   │   │   ├── CommonTriggerHandler.cls-meta.xml
 │   │   │   │   ├── CommonConstants.cls
 │   │   │   │   ├── CommonConstants.cls-meta.xml
 │   │   │   │   ├── CommonErrorUtils.cls

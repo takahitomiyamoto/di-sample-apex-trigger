@@ -19,32 +19,27 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
   private static String methodName;
 
   // Instance Variables
-  private AccountTriggerHandler handler;
+  private CommonTriggerHandler handler;
 
   /**************************************************
    * Name: AccountTriggerValidation
-   * Description: Constructor with some parameters
+   * Description: Constructor with no parameter
    *
-   * @param  BaseTriggerHandler handler
+   * @param  none
    * @return AccountTriggerValidation
    **************************************************/
-  @TestVisible
-  private AccountTriggerValidation(BaseTriggerHandler handler) {
-    methodName = 'AccountTriggerValidation';
-
-    this.handler = (AccountTriggerHandler)handler;
-  }
+  public AccountTriggerValidation() {}
 
   /**************************************************
-   * Name: getInstance
+   * Name: getTriggerObserver
    * Description: Get Instance with some parameters
    *
-   * @param  BaseTriggerHandler handler
+   * @param  CommonTriggerHandler handler
    * @return ITriggerObserver
    **************************************************/
-  public static ITriggerObserver getInstance(BaseTriggerHandler handler) {
-    AccountTriggerValidation validation = new AccountTriggerValidation(handler);
-    return (ITriggerObserver)validation;
+  public ITriggerObserver getTriggerObserver(CommonTriggerHandler handler) {
+    this.handler = handler;
+    return (ITriggerObserver)this;
   }
 
   /*******************************************************
@@ -57,7 +52,7 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
   public void onBeforeInsert() {
     methodName = 'onBeforeInsert';
 
-    this.validatePhone(handler.newAccounts);
+    this.validatePhone((List<Account>)handler.newObjects);
   }
 
   /*******************************************************
@@ -70,7 +65,7 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
   public void onBeforeUpdate() {
     methodName = 'onBeforeUpdate';
 
-    this.validatePhone(handler.newAccounts);
+    this.validatePhone((List<Account>)handler.newObjects);
   }
 
   /*******************************************************

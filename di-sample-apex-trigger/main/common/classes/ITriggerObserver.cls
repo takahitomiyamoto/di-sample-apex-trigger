@@ -4,7 +4,7 @@
  * Description: Interface for all trigger observers
  *******************************************************/
 public interface ITriggerObserver {
-  ITriggerObserver getInstance(BaseTriggerHandler handler);
+  ITriggerObserver getTriggerObserver(CommonTriggerHandler handler);
   void onBeforeInsert();
   void onBeforeUpdate();
   void onBeforeDelete();

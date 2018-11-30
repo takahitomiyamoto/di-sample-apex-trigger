@@ -24,8 +24,8 @@ private class AccountTriggerValidationTest {
   }
 
   @isTest static void onBeforeDeleteTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerValidation validation = new AccountTriggerValidation((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
 
     Test.startTest();
     validation.onBeforeDelete();
@@ -33,8 +33,8 @@ private class AccountTriggerValidationTest {
   }
 
   @isTest static void onAfterInsertTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerValidation validation = new AccountTriggerValidation((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
 
     Test.startTest();
     validation.onAfterInsert();
@@ -42,8 +42,8 @@ private class AccountTriggerValidationTest {
   }
 
   @isTest static void onAfterUpdateTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerValidation validation = new AccountTriggerValidation((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
 
     Test.startTest();
     validation.onAfterUpdate();
@@ -51,8 +51,8 @@ private class AccountTriggerValidationTest {
   }
 
   @isTest static void onAfterDeleteTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerValidation validation = new AccountTriggerValidation((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
 
     Test.startTest();
     validation.onAfterDelete();
@@ -60,8 +60,8 @@ private class AccountTriggerValidationTest {
   }
 
   @isTest static void onAfterUndeleteTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerValidation validation = new AccountTriggerValidation((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
 
     Test.startTest();
     validation.onAfterUndelete();

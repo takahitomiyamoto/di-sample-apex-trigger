@@ -1,14 +1,15 @@
 /**************************************************
- * Name: BaseTriggerHandler.cls
+ * Name: CommonTriggerHandler.cls
  * Description: Base class for all triggers
  **************************************************/
-public abstract class BaseTriggerHandler {
+// public abstract class CommonTriggerHandler {
+public without sharing class CommonTriggerHandler {
 
   // Custom Exception
   private class CommonException extends Exception {}
 
   // Constants
-  private static final String CLASS_NAME = BaseTriggerHandler.class.getName();
+  private static final String CLASS_NAME = CommonTriggerHandler.class.getName();
   private static final System.loggingLevel LOGGING_LEVEL_DEFAULT = CommonLogger.LOGGING_LEVEL_DEFAULT;
 
   // Logger Variable
@@ -19,35 +20,42 @@ public abstract class BaseTriggerHandler {
   public static Boolean firstRun = true;
 
   // Instance Variables
-  protected String sObjectName;
-  protected List<sObject> oldObjects;
-  protected List<sObject> newObjects;
-  protected Map<ID, sObject> oldObjectMap;
-  protected Map<ID, sObject> newObjectMap;
-  protected Boolean triggerIsExecuting;
-  protected Integer triggerSize;
-  protected System.TriggerOperation triggerOperationType;
-  protected List<ITriggerObserver> beforeInsertObservers = new List<ITriggerObserver>();
-  protected List<ITriggerObserver> beforeUpdateObservers = new List<ITriggerObserver>();
-  protected List<ITriggerObserver> beforeDeleteObservers = new List<ITriggerObserver>();
-  protected List<ITriggerObserver> afterInsertObservers = new List<ITriggerObserver>();
-  protected List<ITriggerObserver> afterUpdateObservers = new List<ITriggerObserver>();
-  protected List<ITriggerObserver> afterDeleteObservers = new List<ITriggerObserver>();
-  protected List<ITriggerObserver> afterUndeleteObservers = new List<ITriggerObserver>();
+  public List<sObject> oldObjects;
+  public List<sObject> newObjects;
+  public Map<ID, sObject> oldObjectMap;
+  public Map<ID, sObject> newObjectMap;
+  private String sObjectName;
+  private Boolean triggerIsExecuting;
+  private Integer triggerSize;
+  private System.TriggerOperation triggerOperationType;
+  private List<ITriggerObserver> beforeInsertObservers = new List<ITriggerObserver>();
+  private List<ITriggerObserver> beforeUpdateObservers = new List<ITriggerObserver>();
+  private List<ITriggerObserver> beforeDeleteObservers = new List<ITriggerObserver>();
+  private List<ITriggerObserver> afterInsertObservers = new List<ITriggerObserver>();
+  private List<ITriggerObserver> afterUpdateObservers = new List<ITriggerObserver>();
+  private List<ITriggerObserver> afterDeleteObservers = new List<ITriggerObserver>();
+  private List<ITriggerObserver> afterUndeleteObservers = new List<ITriggerObserver>();
 
   // Abstract Methods
   @TestVisible
-  protected abstract ITriggerObserver createTriggerObserver(System.Type apexClass);
+  private ITriggerObserver createTriggerObserver(System.Type apexClass) {
+    if (null == apexClass) {
+      return null;
+    } else {
+      ITriggerObserver observer = (ITriggerObserver)apexClass.newInstance();
+      return observer.getTriggerObserver(this);
+    }
+  }
 
   /**************************************************
-   * Name: BaseTriggerHandler
+   * Name: CommonTriggerHandler
    * Description: Constructor with no parameter
    *
    * @param  none
-   * @return BaseTriggerHandler
+   * @return CommonTriggerHandler
    **************************************************/
-  public BaseTriggerHandler(String sObjectName) {
-    methodName = 'BaseTriggerHandler';
+  public CommonTriggerHandler(String sObjectName) {
+    methodName = 'CommonTriggerHandler';
 
     this.sObjectName = sObjectName;
     this.oldObjects = Trigger.old;
@@ -319,9 +327,9 @@ public abstract class BaseTriggerHandler {
    ************************************************************/
   private Boolean isRecursive() {
     methodName = 'isRecursive';
-    logger.stackDebugLog(LOGGING_LEVEL_DEFAULT, CLASS_NAME, methodName, 'firstRun: ' + BaseTriggerHandler.firstRun);
+    logger.stackDebugLog(LOGGING_LEVEL_DEFAULT, CLASS_NAME, methodName, 'firstRun: ' + CommonTriggerHandler.firstRun);
 
-    if (BaseTriggerHandler.firstRun) {
+    if (CommonTriggerHandler.firstRun) {
       return false;
     } else if (System.TriggerOperation.AFTER_UNDELETE === this.triggerOperationType) {
       return false;
@@ -360,20 +368,20 @@ public abstract class BaseTriggerHandler {
         }
         when AFTER_INSERT {
           this.onAfterInsert();
-          BaseTriggerHandler.firstRun = false;
+          CommonTriggerHandler.firstRun = false;
         }
         when AFTER_UPDATE {
           this.onAfterUpdate();
-          BaseTriggerHandler.firstRun = false;
+          CommonTriggerHandler.firstRun = false;
         }
         when AFTER_DELETE {
           this.onAfterDelete();
-          BaseTriggerHandler.firstRun = false;
+          CommonTriggerHandler.firstRun = false;
         }
         // AFTER_UNDELETE
         when else {
           this.onAfterUndelete();
-          BaseTriggerHandler.firstRun = false;
+          CommonTriggerHandler.firstRun = false;
         }
       }
     } catch (Exception e) {

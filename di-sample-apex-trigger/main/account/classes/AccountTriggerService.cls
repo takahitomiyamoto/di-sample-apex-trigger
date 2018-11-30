@@ -19,32 +19,27 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
   private static String methodName;
 
   // Instance Variables
-  private AccountTriggerHandler handler;
+  private CommonTriggerHandler handler;
 
   /**************************************************
    * Name: AccountTriggerService
-   * Description: Constructor with some parameters
+   * Description: Constructor with no parameter
    *
-   * @param  BaseTriggerHandler handler
+   * @param  none
    * @return AccountTriggerService
    **************************************************/
-  @TestVisible
-  private AccountTriggerService(BaseTriggerHandler handler) {
-    methodName = 'AccountTriggerService';
-
-    this.handler = (AccountTriggerHandler)handler;
-  }
+  public AccountTriggerService() {}
 
   /**************************************************
-   * Name: getInstance
+   * Name: getTriggerObserver
    * Description: Get Instance with some parameters
    *
-   * @param  BaseTriggerHandler handler
+   * @param  CommonTriggerHandler handler
    * @return ITriggerObserver
    **************************************************/
-  public static ITriggerObserver getInstance(BaseTriggerHandler handler) {
-    AccountTriggerService service = new AccountTriggerService(handler);
-    return (ITriggerObserver)service;
+  public ITriggerObserver getTriggerObserver(CommonTriggerHandler handler) {
+    this.handler = handler;
+    return (ITriggerObserver)this;
   }
 
   /*******************************************************
@@ -57,7 +52,7 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
   public void onBeforeInsert() {
     methodName = 'onBeforeInsert';
 
-    this.addPrefixToName(handler.newAccounts);
+    this.addPrefixToName((List<Account>)handler.newObjects);
   }
 
   /*******************************************************

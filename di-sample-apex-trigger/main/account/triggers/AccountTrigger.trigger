@@ -21,7 +21,7 @@ trigger AccountTrigger on Account(
   after undelete
 ) {
 
-  BaseTriggerHandler handler = new AccountTriggerHandler();
+  CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
   handler.invoke();
 
 }

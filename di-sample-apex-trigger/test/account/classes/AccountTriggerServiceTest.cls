@@ -15,8 +15,8 @@ private class AccountTriggerServiceTest {
   }
 
   @isTest static void onBeforeUpdateTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerService service = new AccountTriggerService((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
     Test.startTest();
     service.onBeforeUpdate();
@@ -24,8 +24,8 @@ private class AccountTriggerServiceTest {
   }
 
   @isTest static void onBeforeDeleteTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerService service = new AccountTriggerService((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
     Test.startTest();
     service.onBeforeDelete();
@@ -33,8 +33,8 @@ private class AccountTriggerServiceTest {
   }
 
   @isTest static void onAfterInsertTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerService service = new AccountTriggerService((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
     Test.startTest();
     service.onAfterInsert();
@@ -42,8 +42,8 @@ private class AccountTriggerServiceTest {
   }
 
   @isTest static void onAfterUpdateTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerService service = new AccountTriggerService((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
     Test.startTest();
     service.onAfterUpdate();
@@ -51,8 +51,8 @@ private class AccountTriggerServiceTest {
   }
 
   @isTest static void onAfterDeleteTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerService service = new AccountTriggerService((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
     Test.startTest();
     service.onAfterDelete();
@@ -60,8 +60,8 @@ private class AccountTriggerServiceTest {
   }
 
   @isTest static void onAfterUndeleteTest() {
-    BaseTriggerHandler handler = new AccountTriggerHandler();
-    AccountTriggerService service = new AccountTriggerService((AccountTriggerHandler)handler);
+    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
     Test.startTest();
     service.onAfterUndelete();
