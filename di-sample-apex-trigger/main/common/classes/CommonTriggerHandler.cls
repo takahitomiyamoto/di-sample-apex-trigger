@@ -36,17 +36,6 @@ public without sharing class CommonTriggerHandler {
   private List<ITriggerObserver> afterDeleteObservers = new List<ITriggerObserver>();
   private List<ITriggerObserver> afterUndeleteObservers = new List<ITriggerObserver>();
 
-  // Abstract Methods
-  @TestVisible
-  private ITriggerObserver createTriggerObserver(System.Type apexClass) {
-    if (null == apexClass) {
-      return null;
-    } else {
-      ITriggerObserver observer = (ITriggerObserver)apexClass.newInstance();
-      return observer.getTriggerObserver(this);
-    }
-  }
-
   /**************************************************
    * Name: CommonTriggerHandler
    * Description: Constructor with no parameter
@@ -224,6 +213,23 @@ public without sharing class CommonTriggerHandler {
           afterUndeleteObservers.add(triggerObserver);
         }
       }
+    }
+  }
+
+  /*****************************************
+   * Name: createTriggerObserver
+   * Description: create TriggerObserver
+   *
+   * @param  System.Type apexClass
+   * @return ITriggerObserver
+   *****************************************/
+  @TestVisible
+  private ITriggerObserver createTriggerObserver(System.Type apexClass) {
+    if (null == apexClass) {
+      return null;
+    } else {
+      ITriggerObserver observer = (ITriggerObserver)apexClass.newInstance();
+      return observer.getTriggerObserver(this);
     }
   }
 
