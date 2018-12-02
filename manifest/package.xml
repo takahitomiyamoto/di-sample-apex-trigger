@@ -27,6 +27,7 @@
     <members>Trigger_Observer.TR001</members>
     <members>Trigger_Observer.TR002</members>
     <members>Trigger_Observer.TR003</members>
+    <members>Trigger_Observer.TR004</members>
   </types>
   <types>
     <name>Layout</name>
