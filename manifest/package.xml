@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <name>ApexClass</name>
+    <members>AccountConstants</members>
+    <members>AccountTestUtils</members>
+    <members>AccountTriggerService</members>
+    <members>AccountTriggerServiceTest</members>
+    <members>AccountTriggerValidation</members>
+    <members>AccountTriggerValidationTest</members>
+    <members>CommonConstants</members>
+    <members>CommonErrorUtils</members>
+    <members>CommonErrorUtilsTest</members>
+    <members>CommonLogger</members>
+    <members>CommonLoggerTest</members>
+    <members>CommonTriggerHandler</members>
+    <members>CommonTriggerHandlerTest</members>
+    <members>ITriggerObserver</members>
+  </types>
+  <types>
+    <name>ApexTrigger</name>
+    <members>AccountTrigger</members>
+  </types>
+  <types>
+    <name>CustomMetadata</name>
+    <members>Logger.DEFAULT</members>
+    <members>Trigger_Observer.TR001</members>
+    <members>Trigger_Observer.TR002</members>
+    <members>Trigger_Observer.TR003</members>
+  </types>
+  <types>
+    <name>Layout</name>
+    <members>Logger__mdt-Logger Layout</members>
+    <members>Trigger_Observer__mdt-Trigger Observer Layout</members>
+  </types>
+  <types>
+    <name>CustomObject</name>
+    <members>Logger__mdt</members>
+    <members>Trigger_Observer__mdt</members>
+  </types>
+  <types>
+    <name>CustomField</name>
+    <members>Logger__mdt</members>
+    <members>Trigger_Observer__mdt</members>
+  </types>
+  <types>
+    <name>ListView</name>
+    <members>Logger__mdt</members>
+    <members>Trigger_Observer__mdt</members>
+  </types>
+  <types>
+    <name>Profile</name>
+    <members>Admin</members>
+  </types>
+  <version>44.0</version>
+</Package>

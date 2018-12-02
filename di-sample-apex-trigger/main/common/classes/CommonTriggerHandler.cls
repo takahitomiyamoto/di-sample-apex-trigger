@@ -28,13 +28,13 @@ public without sharing class CommonTriggerHandler {
   private Boolean triggerIsExecuting;
   private Integer triggerSize;
   private System.TriggerOperation triggerOperationType;
-  private List<ITriggerObserver> beforeInsertObservers = new List<ITriggerObserver>();
-  private List<ITriggerObserver> beforeUpdateObservers = new List<ITriggerObserver>();
-  private List<ITriggerObserver> beforeDeleteObservers = new List<ITriggerObserver>();
-  private List<ITriggerObserver> afterInsertObservers = new List<ITriggerObserver>();
-  private List<ITriggerObserver> afterUpdateObservers = new List<ITriggerObserver>();
-  private List<ITriggerObserver> afterDeleteObservers = new List<ITriggerObserver>();
-  private List<ITriggerObserver> afterUndeleteObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> beforeInsertObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> beforeUpdateObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> beforeDeleteObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> afterInsertObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> afterUpdateObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> afterDeleteObservers = new List<ITriggerObserver>();
+  @TestVisible private List<ITriggerObserver> afterUndeleteObservers = new List<ITriggerObserver>();
 
   /**************************************************
    * Name: CommonTriggerHandler
@@ -331,6 +331,7 @@ public without sharing class CommonTriggerHandler {
    * @param  none
    * @return Boolean
    ************************************************************/
+  @TestVisible
   private Boolean isRecursive() {
     methodName = 'isRecursive';
     logger.stackDebugLog(LOGGING_LEVEL_DEFAULT, CLASS_NAME, methodName, 'firstRun: ' + CommonTriggerHandler.firstRun);

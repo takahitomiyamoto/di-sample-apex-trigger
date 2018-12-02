@@ -6,13 +6,13 @@
 
 private class AccountTriggerServiceTest {
 
-  @testSetup static void setup() {}
+  // @testSetup static void setup() {}
 
-  @isTest static void onBeforeInsertTest() {
-    Test.startTest();
-    AccountTestUtils.insertAccounts();
-    Test.stopTest();
-  }
+  // @isTest static void onBeforeInsertTest() {
+  //   Test.startTest();
+  //   AccountTestUtils.insertAccounts();
+  //   Test.stopTest();
+  // }
 
   @isTest static void onBeforeUpdateTest() {
     CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
@@ -23,49 +23,49 @@ private class AccountTriggerServiceTest {
     Test.stopTest();
   }
 
-  @isTest static void onBeforeDeleteTest() {
-    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  // @isTest static void onBeforeDeleteTest() {
+  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
-    Test.startTest();
-    service.onBeforeDelete();
-    Test.stopTest();
-  }
+  //   Test.startTest();
+  //   service.onBeforeDelete();
+  //   Test.stopTest();
+  // }
 
-  @isTest static void onAfterInsertTest() {
-    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  // @isTest static void onAfterInsertTest() {
+  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
-    Test.startTest();
-    service.onAfterInsert();
-    Test.stopTest();
-  }
+  //   Test.startTest();
+  //   service.onAfterInsert();
+  //   Test.stopTest();
+  // }
 
-  @isTest static void onAfterUpdateTest() {
-    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  // @isTest static void onAfterUpdateTest() {
+  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
-    Test.startTest();
-    service.onAfterUpdate();
-    Test.stopTest();
-  }
+  //   Test.startTest();
+  //   service.onAfterUpdate();
+  //   Test.stopTest();
+  // }
 
-  @isTest static void onAfterDeleteTest() {
-    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  // @isTest static void onAfterDeleteTest() {
+  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
-    Test.startTest();
-    service.onAfterDelete();
-    Test.stopTest();
-  }
+  //   Test.startTest();
+  //   service.onAfterDelete();
+  //   Test.stopTest();
+  // }
 
-  @isTest static void onAfterUndeleteTest() {
-    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  // @isTest static void onAfterUndeleteTest() {
+  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
+  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
 
-    Test.startTest();
-    service.onAfterUndelete();
-    Test.stopTest();
-  }
+  //   Test.startTest();
+  //   service.onAfterUndelete();
+  //   Test.stopTest();
+  // }
 
 }

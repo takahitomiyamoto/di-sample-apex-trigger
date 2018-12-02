@@ -102,6 +102,8 @@ Basically you don't have to change any metadata under
 │               ├── CommonErrorUtilsTest.cls-meta.xml
 │               ├── CommonLoggerTest.cls
 │               └── CommonLoggerTest.cls-meta.xml
+├── manifest
+│   └── package.xml
 ├── orgInit.sh
 ├── out
 │   ├── class_diagram.png

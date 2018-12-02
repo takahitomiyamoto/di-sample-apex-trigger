@@ -30,13 +30,13 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
    **************************************************/
   public AccountTriggerService() {}
 
-  /**************************************************
+  /****************************************
    * Name: getTriggerObserver
-   * Description: Get Instance with some parameters
+   * Description: Get TriggerObserver
    *
    * @param  CommonTriggerHandler handler
    * @return ITriggerObserver
-   **************************************************/
+   ****************************************/
   public ITriggerObserver getTriggerObserver(CommonTriggerHandler handler) {
     this.handler = handler;
     return (ITriggerObserver)this;
