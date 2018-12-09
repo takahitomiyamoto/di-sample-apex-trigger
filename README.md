@@ -1,6 +1,8 @@
 # Dependency Injection Sample for Apex Trigger
 
 ## How to Use
+If you are Japanese, please see [HERE](https://qiita.com/takahito0508/items/59291ef464aa3c5c2c36).
+
 - [Enable DevHub](https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.htm)
 - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm#sfdx_setup_install_cli)
 - [Install VS Code](https://developer.salesforce.com/ja/tools/extension_vscode)
