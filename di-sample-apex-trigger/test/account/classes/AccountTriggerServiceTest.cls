@@ -1,71 +1,80 @@
 /*******************************************************
  * Name: AccountTriggerServiceTest.cls
- * Description: Test class for AccountTriggerService.cls
+ * Description: Test class for AccountTriggerService
  ********************************************************/
 @isTest(SeeAllData=false)
-
 private class AccountTriggerServiceTest {
 
-  // @testSetup static void setup() {}
+  private static final String SOBJECT_NAME_ACCOUNT = Account.class.getName();
 
-  // @isTest static void onBeforeInsertTest() {
-  //   Test.startTest();
-  //   AccountTestUtils.insertAccounts();
-  //   Test.stopTest();
-  // }
+  @testSetup static void setup() {
+    AccountTestUtils.insertNormalAccounts();
+    AccountTestUtils.insertAbnormalAccounts();
+  }
 
-  @isTest static void onBeforeUpdateTest() {
-    CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-    ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  @isTest static void onBeforeInsert() {
+    AccountTriggerService validation = new AccountTriggerService();
 
     Test.startTest();
-    service.onBeforeUpdate();
+    validation.onBeforeInsert();
     Test.stopTest();
   }
 
-  // @isTest static void onBeforeDeleteTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  @isTest static void onBeforeUpdate() {
+    AccountTriggerService validation = new AccountTriggerService();
 
-  //   Test.startTest();
-  //   service.onBeforeDelete();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onBeforeUpdate();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterInsertTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  @isTest static void onBeforeDelete() {
+    AccountTriggerService validation = new AccountTriggerService();
 
-  //   Test.startTest();
-  //   service.onAfterInsert();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onBeforeDelete();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterUpdateTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  @isTest static void onAfterInsert() {
+    AccountTriggerService validation = new AccountTriggerService();
 
-  //   Test.startTest();
-  //   service.onAfterUpdate();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onAfterInsert();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterDeleteTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  @isTest static void onAfterUpdate() {
+    AccountTriggerService validation = new AccountTriggerService();
 
-  //   Test.startTest();
-  //   service.onAfterDelete();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onAfterUpdate();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterUndeleteTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver service = new AccountTriggerService().getTriggerObserver(handler);
+  @isTest static void onAfterDelete() {
+    AccountTriggerService validation = new AccountTriggerService();
 
-  //   Test.startTest();
-  //   service.onAfterUndelete();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onAfterDelete();
+    Test.stopTest();
+  }
+
+  @isTest static void onAfterUndelete() {
+    AccountTriggerService validation = new AccountTriggerService();
+
+    Test.startTest();
+    validation.onAfterUndelete();
+    Test.stopTest();
+  }
+
+  @isTest static void addPrefixToName() {
+    AccountTriggerService service = new AccountTriggerService();
+    List<Account> accounts = null;
+
+    Test.startTest();
+    service.addPrefixToName(accounts);
+    Test.stopTest();
+  }
 
 }

@@ -52,6 +52,10 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
   public void onBeforeInsert() {
     methodName = 'onBeforeInsert';
 
+    if (null == handler) {
+      return;
+    }
+
     this.addPrefixToName((List<Account>)handler.newObjects);
   }
 
@@ -122,8 +126,13 @@ public with sharing class AccountTriggerService implements ITriggerObserver {
    * @param  List<Account> accounts
    * @return void
    *****************************************************************/
+  @TestVisible
   private void addPrefixToName(List<Account> accounts) {
     methodName = 'addPrefixToName';
+
+    if (null == accounts) {
+      return;
+    }
 
     for (Account a : accounts) {
       a.Name = NAME_PREFIX_SAMPLE + a.Name;

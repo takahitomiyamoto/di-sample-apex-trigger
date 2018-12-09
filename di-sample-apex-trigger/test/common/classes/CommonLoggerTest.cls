@@ -1,6 +1,6 @@
 /*******************************************************
  * Name: CommonLoggerTest.cls
- * Description: Test class for CommonLogger.cls
+ * Description: Test class for CommonLogger
  ********************************************************/
 @isTest(SeeAllData=false)
 private class CommonLoggerTest {

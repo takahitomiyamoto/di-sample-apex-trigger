@@ -1,71 +1,97 @@
 /*******************************************************
  * Name: AccountTriggerValidationTest.cls
- * Description: Test class for AccountTriggerValidation.cls
+ * Description: Test class for AccountTriggerValidation
  ********************************************************/
 @isTest(SeeAllData=false)
 private class AccountTriggerValidationTest {
 
-  // @testSetup static void setup() {
-  //   AccountTestUtils.insertAccounts();
-  // }
+  private static final String SOBJECT_NAME_ACCOUNT = Account.class.getName();
 
-  // @isTest static void onBeforeInsertTest() {
-  //   Test.startTest();
-  //   AccountTestUtils.insertAccounts();
-  //   Test.stopTest();
-  // }
+  @testSetup static void setup() {
+    AccountTestUtils.insertNormalAccounts();
+    AccountTestUtils.insertAbnormalAccounts();
+  }
 
-  // @isTest static void onBeforeUpdateTest() {
-  //   List<Account> accounts = AccountTestUtils.selectAccounts();
+  @isTest static void onBeforeInsert() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
 
-  //   Test.startTest();
-  //   AccountTestUtils.updateAccounts(accounts);
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onBeforeInsert();
+    Test.stopTest();
+  }
 
-  // @isTest static void onBeforeDeleteTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
+  @isTest static void onBeforeUpdate() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
 
-  //   Test.startTest();
-  //   validation.onBeforeDelete();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onBeforeUpdate();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterInsertTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
+  @isTest static void onBeforeDelete() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
 
-  //   Test.startTest();
-  //   validation.onAfterInsert();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onBeforeDelete();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterUpdateTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
+  @isTest static void onAfterInsert() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
 
-  //   Test.startTest();
-  //   validation.onAfterUpdate();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onAfterInsert();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterDeleteTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
+  @isTest static void onAfterUpdate() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
 
-  //   Test.startTest();
-  //   validation.onAfterDelete();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onAfterUpdate();
+    Test.stopTest();
+  }
 
-  // @isTest static void onAfterUndeleteTest() {
-  //   CommonTriggerHandler handler = new CommonTriggerHandler(Account.class.getName());
-  //   ITriggerObserver validation = new AccountTriggerValidation().getTriggerObserver(handler);
+  @isTest static void onAfterDelete() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
 
-  //   Test.startTest();
-  //   validation.onAfterUndelete();
-  //   Test.stopTest();
-  // }
+    Test.startTest();
+    validation.onAfterDelete();
+    Test.stopTest();
+  }
+
+  @isTest static void onAfterUndelete() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
+
+    Test.startTest();
+    validation.onAfterUndelete();
+    Test.stopTest();
+  }
+
+  @isTest static void onBeforeUpdate_validatePhone() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
+    CommonTriggerHandler handler = new CommonTriggerHandler(SOBJECT_NAME_ACCOUNT);
+    ITriggerObserver triggerObserver = validation.getTriggerObserver(handler);
+    handler.beforeUpdateObservers.add(triggerObserver);
+
+    Test.startTest();
+    validation.onBeforeUpdate();
+    Test.stopTest();
+  }
+
+  @isTest static void validatePhone_Exception() {
+    AccountTriggerValidation validation = new AccountTriggerValidation();
+    List<Account> accounts = AccountTestUtils.selectAccounts();
+    String message = '';
+
+    Test.startTest();
+    try {
+      validation.validatePhone(accounts);
+    } catch (Exception e) {
+      message = CommonErrorUtils.createErrorMessage(e);
+      System.assertNotEquals('', message);
+    }
+    Test.stopTest();
+  }
 
 }

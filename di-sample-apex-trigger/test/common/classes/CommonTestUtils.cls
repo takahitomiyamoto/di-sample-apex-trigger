@@ -1,9 +1,9 @@
-/*******************************************************
- * Name: AccountTestUtils.cls
- * Description: Utilities class of Test for Account
- *******************************************************/
+/**************************************************
+ * Name: CommonTestUtils.cls
+ * Description: Utilities class of Test for Common
+ **************************************************/
 @isTest(SeeAllData=false)
-public without sharing class AccountTestUtils {
+public without sharing class CommonTestUtils {
 
   private static List<Account> createNormalAccounts() {
     List<Account> accounts = new List<Account>();
@@ -28,7 +28,7 @@ public without sharing class AccountTestUtils {
   }
 
   public static void insertNormalAccounts() {
-    List<Account> accounts = AccountTestUtils.createNormalAccounts();
+    List<Account> accounts = CommonTestUtils.createNormalAccounts();
     Database.SaveResult[] results = Database.insert(accounts, false);
     for (Database.SaveResult result : results) {
       if (!result.isSuccess()) {
@@ -41,7 +41,7 @@ public without sharing class AccountTestUtils {
   }
 
   public static void insertAbnormalAccounts() {
-    List<Account> accounts = AccountTestUtils.createAbnormalAccounts();
+    List<Account> accounts = CommonTestUtils.createAbnormalAccounts();
     Database.SaveResult[] results = Database.insert(accounts, false);
     for (Database.SaveResult result : results) {
       if (!result.isSuccess()) {

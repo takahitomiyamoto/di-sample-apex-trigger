@@ -52,6 +52,10 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
   public void onBeforeInsert() {
     methodName = 'onBeforeInsert';
 
+    if (null == handler) {
+      return;
+    }
+
     this.validatePhone((List<Account>)handler.newObjects);
   }
 
@@ -64,6 +68,10 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
    ********************************************************/
   public void onBeforeUpdate() {
     methodName = 'onBeforeUpdate';
+
+    if (null == handler) {
+      return;
+    }
 
     this.validatePhone((List<Account>)handler.newObjects);
   }
@@ -126,8 +134,13 @@ public with sharing class AccountTriggerValidation implements ITriggerObserver {
    * @param  List<Account> accounts
    * @return void
    ********************************************************************************/
+  @TestVisible
   private void validatePhone(List<Account> accounts) {
     methodName = 'validatePhone';
+
+    if (null == accounts) {
+      return;
+    }
 
     for (Account a : accounts) {
       Boolean hasFax = String.isNotEmpty(a.Fax);

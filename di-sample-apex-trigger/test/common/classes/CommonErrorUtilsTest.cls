@@ -1,6 +1,6 @@
 /*******************************************************
  * Name: CommonErrorUtilsTest.cls
- * Description: Test class for CommonErrorUtils.cls
+ * Description: Test class for CommonErrorUtils
  ********************************************************/
 @isTest(SeeAllData=false)
 private class CommonErrorUtilsTest {

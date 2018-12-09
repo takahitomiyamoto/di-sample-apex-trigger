@@ -1,6 +1,6 @@
 /***********************************
  * Name: CommonErrorUtils.cls
- * Description: Utilities for Error
+ * Description: Utilities class of Error
  ***********************************/
 public without sharing class CommonErrorUtils {
 

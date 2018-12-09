@@ -2,7 +2,6 @@
  * Name: CommonTriggerHandler.cls
  * Description: Base class for all triggers
  **************************************************/
-// public abstract class CommonTriggerHandler {
 public without sharing class CommonTriggerHandler {
 
   // Custom Exception
