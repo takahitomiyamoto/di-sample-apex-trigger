@@ -13,6 +13,7 @@
     <members>CommonErrorUtilsTest</members>
     <members>CommonLogger</members>
     <members>CommonLoggerTest</members>
+    <members>CommonTestUtils</members>
     <members>CommonTriggerHandler</members>
     <members>CommonTriggerHandlerTest</members>
     <members>ITriggerObserver</members>
@@ -24,10 +25,9 @@
   <types>
     <name>CustomMetadata</name>
     <members>Logger.DEFAULT</members>
-    <members>Trigger_Observer.TR001</members>
-    <members>Trigger_Observer.TR002</members>
-    <members>Trigger_Observer.TR003</members>
-    <members>Trigger_Observer.TR004</members>
+    <members>Trigger_Observer.AccountTriggerService</members>
+    <members>Trigger_Observer.AccountTriggerValidation</members>
+    <members>Trigger_Observer.CommonTriggerObserverMock</members>
   </types>
   <types>
     <name>Layout</name>
@@ -41,13 +41,23 @@
   </types>
   <types>
     <name>CustomField</name>
-    <members>Logger__mdt</members>
-    <members>Trigger_Observer__mdt</members>
+    <members>Logger__mdt.Logging_Level__c</members>
+    <members>Trigger_Observer__mdt.Active__c</members>
+    <members>Trigger_Observer__mdt.After_Delete__c</members>
+    <members>Trigger_Observer__mdt.After_Insert__c</members>
+    <members>Trigger_Observer__mdt.After_Undelete__c</members>
+    <members>Trigger_Observer__mdt.After_Update__c</members>
+    <members>Trigger_Observer__mdt.Apex_Class__c</members>
+    <members>Trigger_Observer__mdt.Before_Delete__c</members>
+    <members>Trigger_Observer__mdt.Before_Insert__c</members>
+    <members>Trigger_Observer__mdt.Before_Update__c</members>
+    <members>Trigger_Observer__mdt.Object__c</members>
+    <members>Trigger_Observer__mdt.Test_Only__c</members>
   </types>
   <types>
     <name>ListView</name>
-    <members>Logger__mdt</members>
-    <members>Trigger_Observer__mdt</members>
+    <members>Logger__mdt.All_Records</members>
+    <members>Trigger_Observer__mdt.All_Records</members>
   </types>
   <types>
     <name>Profile</name>
