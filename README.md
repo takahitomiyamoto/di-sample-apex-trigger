@@ -16,9 +16,8 @@ sudo chmod +x ./orgInit.sh  # if needed.
 ```
 
 Basically you don't have to change any metadata under
-  - ./di-sample-apex-trigger/main/common/classes/
-  - ./di-sample-apex-trigger/main/common/objects/Trigger_Observer__mdt/
-  - ./di-sample-apex-trigger/test/common/classes/
+  - ./di-sample-apex-trigger/main/common/
+  - ./di-sample-apex-trigger/test/common/
 
 ![class_diagram](https://raw.githubusercontent.com/takahitomiyamoto/di-sample-apex-trigger/master/out/class_diagram_di-sample-apex-trigger.png)
 
@@ -39,6 +38,9 @@ Basically you don't have to change any metadata under
 │   │   │   │   ├── AccountTriggerService.cls-meta.xml
 │   │   │   │   ├── AccountTriggerValidation.cls
 │   │   │   │   └── AccountTriggerValidation.cls-meta.xml
+│   │   │   ├── customMetadata
+│   │   │   │   ├── Trigger_Observer.AccountTriggerService.md-meta.xml
+│   │   │   │   └── Trigger_Observer.AccountTriggerValidation.md-meta.xml
 │   │   │   └── triggers
 │   │   │       ├── AccountTrigger.trigger
 │   │   │       └── AccountTrigger.trigger-meta.xml
@@ -56,8 +58,6 @@ Basically you don't have to change any metadata under
 │   │       │   └── ITriggerObserver.cls-meta.xml
 │   │       ├── customMetadata
 │   │       │   ├── Logger.DEFAULT.md-meta.xml
-│   │       │   ├── Trigger_Observer.AccountTriggerService.md-meta.xml
-│   │       │   ├── Trigger_Observer.AccountTriggerValidation.md-meta.xml
 │   │       │   └── Trigger_Observer.CommonTriggerObserverMock.md-meta.xml
 │   │       ├── layouts
 │   │       │   ├── Logger__mdt-Logger Layout.layout-meta.xml
